@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ControllerV1 {
 
     // 세부요청들은 메서드를 통해 처리
-    @RequestMapping("/hello")
+    @RequestMapping("/hello") // http://localhost:8181/spring/hello
     public String hello() {
         System.out.println("\n====== 헬로 요청이 들어옴! ======\n");
         // 어떤 JSP를 열어줄지 경로를 적습니다.
