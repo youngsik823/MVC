@@ -50,12 +50,12 @@ public class ControllerV1 {
     // ==> ex ) /spring/major?stu=kim&major=business&grade=3
     @RequestMapping("/major")
     public String major(
-            @RequestParam String stu,
-            @RequestParam String major,
-            @RequestParam int grade
+            String stu, // 주소랑 변수 이름이 같고 defaultValue를 안하면 @RequestParam 생략 가능
+            @RequestParam("major") String mj, // 클라이언트에 major이면 mj로 받고 주소에는 major로 나오게 한다.
+            @RequestParam(defaultValue = "1") int grade // grade를 값을 안정하면 1로 전달한다.
     ) {
         System.out.println("stu = " + stu);
-        System.out.println("major = " + major);
+        System.out.println("major = " + mj);
         System.out.println("grade = " + grade);
 
         return "";
