@@ -76,7 +76,8 @@ public class ControllerV1 {
     // == 4. URL에 경로로 붙어있는 데이터 읽기
     // ==> /spring/member/hong/107
     //  hong이라는 유저의 107번 게시글을 읽고싶음
-    // @PathVariable /뒤에
+    // @PathVariable 어노테이션을 이용해서 {템플릿 변수} 와 동일한 이름을 갖는 파라미터를 추가하면 된다.
+    // @PathVariable는 생략 하면안됨
     @RequestMapping("member/{userName}/{bNo}")
     public String member(
            @PathVariable String userName,
