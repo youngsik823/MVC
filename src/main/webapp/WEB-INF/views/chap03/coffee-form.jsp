@@ -62,6 +62,7 @@
                 <input id="price-tag" type="hidden" name="price">
                 <!-- change 할때 value값이 생기는데 누르기 전까지는 안생겨서 초기에 에러가 난다.
                 미리 초기값을 정해주면 에러 안남 -->
+                <!-- input과 select 값을 보내기 -->
                 
 
                 <label>
