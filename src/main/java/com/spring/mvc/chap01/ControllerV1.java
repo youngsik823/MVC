@@ -2,10 +2,7 @@ package com.spring.mvc.chap01;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -91,7 +88,13 @@ public class ControllerV1 {
     }
 
     // 음식 선택 요청 처리
-    @RequestMapping(value = "/food-select", method = RequestMethod.POST)
+    // 에러 400번대는 클라이언트 잘못
+    // 에러 500번대는 서버 잘못
+//    @RequestMapping(value = "/food-select", method = RequestMethod.POST)
+    // 갱신할때는 post
+    // 조회할때는 get
+    // 캐싱은 저장소에 데이터를 저장한다음에 끌어서 쓴다.
+    @PostMapping("/food-select")
     public String foodSelect(String foodName, String category) {
         System.out.println("foodName = " + foodName);
         System.out.println("category = " + category);
