@@ -10,5 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller // @Component와 같은 개념
 public class ControllerV1 {
 
+    // 세부요청들은 메서드를 통해 처리
+    @RequestMapping("/hello")
+    public String hello() {
+        System.out.println("\n====== 헬로 요청이 들어옴! ======\n");
+        // 어떤 JSP를 열어줄지 경로를 적습니다.
+        return "/WEB-INF/views/hello.jsp";
+    }
 
 }
