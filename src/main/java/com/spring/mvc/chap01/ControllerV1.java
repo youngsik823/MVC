@@ -15,7 +15,18 @@ public class ControllerV1 {
     public String hello() {
         System.out.println("\n====== 헬로 요청이 들어옴! ======\n");
         // 어떤 JSP를 열어줄지 경로를 적습니다.
-        return "/WEB-INF/views/hello.jsp";
+//        return "/WEB-INF/views/hello.jsp";
+        return "hello";
     }
+
+    // /spring/food 요청이 오면 food.jsp를 열어보세요
+
+    @RequestMapping("/food")
+    public String food() {
+//        return "/WEB-INF/views/chap01/food.jsp";
+        return "chap01/food";
+    }
+
+
 
 }
