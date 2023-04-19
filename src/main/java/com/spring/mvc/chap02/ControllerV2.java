@@ -39,6 +39,7 @@ public class ControllerV2 {
     // hobbies.jsp를 포워딩
 
     // ModelAndView는 리턴 타입을 ModelAndView로 설정
+    @GetMapping("/hobbies2")
     public ModelAndView hobbies2() {
 
         // jsp로 보내야 할 데이터
