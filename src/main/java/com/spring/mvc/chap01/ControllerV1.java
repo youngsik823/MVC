@@ -75,4 +75,9 @@ public class ControllerV1 {
     // == 4. URL에 경로로 붙어있는 데이터 읽기
     // ==> /spring/member/hong/107
     //  hong이라는 유저의 107번 게시글을 읽고싶음
+    @RequestMapping("member/{userName}/{bNo}")
+    public String member() {
+
+        return "";
+    }
 }
