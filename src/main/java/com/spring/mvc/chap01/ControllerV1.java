@@ -2,6 +2,7 @@ package com.spring.mvc.chap01;
 
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -75,8 +76,14 @@ public class ControllerV1 {
     // == 4. URL에 경로로 붙어있는 데이터 읽기
     // ==> /spring/member/hong/107
     //  hong이라는 유저의 107번 게시글을 읽고싶음
+    // @PathVariable /뒤에
     @RequestMapping("member/{userName}/{bNo}")
-    public String member() {
+    public String member(
+           @PathVariable String userName,
+           @PathVariable long bNo
+    ) {
+        System.out.println("userName = " + userName);
+        System.out.println("bNo = " + bNo);
 
         return "";
     }
