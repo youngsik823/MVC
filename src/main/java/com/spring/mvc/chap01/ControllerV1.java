@@ -57,7 +57,7 @@ public class ControllerV1 {
     public String major(
             String stu, // 주소랑 변수 이름이 같고 defaultValue를 안하면 @RequestParam 생략 가능
             @RequestParam("major") String mj, // 클라이언트에 major이면 mj로 받고 주소에는 major로 나오게 한다.
-            @RequestParam(defaultValue = "1") int grade // grade를 값을 안정하면 1로 전달한다.
+            @RequestParam(defaultValue = "1") int grade // defaultValue = "1" - grade를 값을 안정하면 1로 전달한다.
     ) {
         System.out.println("stu = " + stu);
         System.out.println("major = " + mj);
@@ -74,6 +74,10 @@ public class ControllerV1 {
     @RequestMapping("/order")
     public String order(OrderRequestDTO dto) {
         System.out.println("dto = " + dto);
+        System.out.println(dto.getONum());
+        System.out.println(dto.getGoods());
+        System.out.println(dto.getAmount());
+        System.out.println(dto.getPrice());
         return "";
     }
 
