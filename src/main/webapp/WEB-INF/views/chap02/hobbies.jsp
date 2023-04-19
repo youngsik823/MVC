@@ -8,10 +8,13 @@
 </head>
 <body>
 
-    <h1>[xxx]님 취미 목록</h1>
+    <h1>[${n}]님 취미 목록</h1>
     <ol>
-        <li>수영</li>
-        <li>낮잠</li>
+        <%-- for (변수 : 배열이나 리스트)  --%>
+        <c:forEach var="h" items="${hList}">
+            <li>${h}ㅋ</li>
+        </c:forEach>
     </ol>
+
 </body>
 </html>
