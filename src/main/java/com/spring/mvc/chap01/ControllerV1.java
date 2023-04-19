@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServlet;
@@ -90,7 +91,7 @@ public class ControllerV1 {
     }
 
     // 음식 선택 요청 처리
-    @RequestMapping("food-select")
+    @RequestMapping(value = "/food-select", method = RequestMethod.POST)
     public String foodSelect(String foodName, String category) {
         System.out.println("foodName = " + foodName);
         System.out.println("category = " + category);
