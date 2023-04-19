@@ -19,6 +19,12 @@ public class ControllerV1 {
         System.out.println("\n====== 헬로 요청이 들어옴! ======\n");
         // 어떤 JSP를 열어줄지 경로를 적습니다.
 //        return "/WEB-INF/views/hello.jsp";
+
+//        application.properties 에서
+//        # jsp view resolver setting
+//        spring.mvc.view.prefix=/WEB-INF/views/
+//        spring.mvc.view.suffix=.jsp
+//        를 적어서 적용시켜줬기 때문에 생략 가능
         return "hello";
     }
 
