@@ -66,4 +66,9 @@ public class ControllerV1 {
     // ==> ex) /spring/order?oNum=20230419007-P&goods=구두&amount=3&price=50000...
     // DTO라고 불림
 
+    @RequestMapping("/order")
+    public String order(OrderRequestDTO dto) {
+        System.out.println("dto = " + dto);
+        return "";
+    }
 }
