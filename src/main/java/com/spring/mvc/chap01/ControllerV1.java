@@ -61,4 +61,9 @@ public class ControllerV1 {
         return "";
     }
 
+    // == 3. 커맨드 캑체 이용하기
+    // == 쿼리 스트링의 양이 너무 많을 경우 또는 연관성이 있을경우
+    // ==> ex) /spring/order?oNum=20230419007-P&goods=구두&amount=3&price=50000...
+
+
 }
