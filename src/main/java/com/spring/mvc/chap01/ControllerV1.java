@@ -99,7 +99,10 @@ public class ControllerV1 {
 //    @RequestMapping(value = "/food-select", method = RequestMethod.POST)
     // 갱신할때는 post
     // 조회할때는 get
+
     // 캐싱은 저장소에 데이터를 저장한다음에 끌어서 쓴다.
+    //동일한 데이터에 반복해서 접근해야 하거나 많은 연산이 필요한 일일때, 결과를 빠르게 이용하고자 성능이 좋은 혹은 가까운 곳에 저장하는 것
+    //즉 캐시는 컴퓨터의 성능을 향상 시키기 위해 사용되는 메모리를 말한다
     @PostMapping("/food-select")
     public String foodSelect(String foodName, String category) {
         System.out.println("foodName = " + foodName);
