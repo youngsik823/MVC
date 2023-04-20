@@ -30,7 +30,8 @@
                 <li># 학점: ${a.grade}</li>
             </ul>
         
-            <a class="del-btn" href="/score/list">목록</a>
+            <a class="info-btn" href="/score/list">목록</a>
+            <a class="modify-btn" href="">수정</a>
         </div>
     </form>
 </body>
