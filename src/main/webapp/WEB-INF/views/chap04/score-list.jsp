@@ -118,7 +118,8 @@
                         # 학번: ${s.stuNum}, 이름: <a href="#">${s.name}</a>, 
                         국어: ${s.kor}점, 영어: ${s.eng}점, 수학: ${s.math}점, 
                         총점: ${s.total}점, 평균: ${s.average}점, 학점: ${s.grade}
-                        <a class="del-btn" href="#">삭제</a>
+                        <a class="del-btn" href="/score/remove?stuNum=${s.stuNum}">삭제</a>    
+                        <!-- a태그는 무조건 GET으로 나감 -->
                     </li>
                 </c:forEach>
                 
@@ -136,12 +137,13 @@
         $ul.addEventListener('click', e => {
             if (!e.target.matches('a.del-btn')) return;
 
-            e.preventDefault();
+            e.preventDefault(); // a태그 기본기능 정지
             //console.log('클릭이벤트 발동!');
 
             if (confirm('정말로 삭제하시겠습니까?')) {
                 //삭제 진행
                 window.location.href = e.target.getAttribute('href');
+                // href에 있는 URL에 적힌 페이지로 이동한다.
             } else {
                 //삭제 취소
                 return;

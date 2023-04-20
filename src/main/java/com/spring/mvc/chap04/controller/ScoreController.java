@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -84,10 +85,12 @@ public class ScoreController {
                                         // 그러면 두번째 요청이 자동으로 들어간다.
     }
     // 3. 성적정보 삭제 요청
-    @PostMapping("/remove")
-    public String remove() {
-        System.out.println("/score/remove : POST!");
-        return "";
+    @GetMapping("/remove")  // @RequestParam 생략가능
+    public String remove(@RequestParam int stuNum) {
+        System.out.println("/score/remove : GET!");
+
+        repository.deleteByStuNum(stuNum);
+        return "redirect:/score/list";
     }
     // 4. 성적정보 상세 조회 요청
     @GetMapping("/detail")
