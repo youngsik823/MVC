@@ -27,7 +27,7 @@ public class ScoreController {
     @GetMapping("/list")
     public String list() {
         System.out.println("/score/list : GET!");
-        return "";
+        return "chap04/score-list";
     }
 
     // 2. 성적 정보 등록 처리 요청
