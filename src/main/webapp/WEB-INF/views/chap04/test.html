@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insert title here</title>
+        <style>
+            /* .box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid yellow;
+            }
+            .box ul {
+                display: block;
+                background: red;
+            }
+            .box .btn {
+                display: block;
+                background: #000;
+                
+            } */
+        </style>
+    </head>
+    
+    <body>
+        <form action="/score/detail" method="GET">
+            <div class="box">
+                
+                <h1>${a.name}님 성적 정보</h1>
+                <ul>
+                    <li># 국어: ${a.kor}점</li>
+                    <li># 영어: ${a.eng}점</li>
+                    <li># 수학: ${a.math}점</li>
+                    <li># 총점: ${a.total}점</li>
+                    <li># 평균: ${a.average}점</li>
+                    <li># 학점: ${a.grade}</li>
+                </ul>
+            
+                <a class="btn" href="/score/list">목록</a>
+            </div>
+        </form>
+    </body>
+    <script>
+    
+    </script>
+    </html>

@@ -11,8 +11,13 @@ import java.util.List;
 public interface ScoreRepository {
 
     // 성적 정보 전체 목록 조회
-    List<Score> findAll();
-
+    List<Score> findAll(); // 일반 목록조회
+    default List<Score> findAll(String sort) // 정렬 목록조회
+    {
+        return null;
+    } 
+    // 나중에 추가되었을때
+    // default 를 달면 선택적으로 강제 오버라이딩이 안된다.
     // 성적 정보 등록
     boolean save(Score score);
 
