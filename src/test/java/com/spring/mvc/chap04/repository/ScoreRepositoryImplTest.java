@@ -31,5 +31,8 @@ class ScoreRepositoryImplTest {
         // 나는 스코어리스트의 사이즈가 3인 것이 참이라고 단언한다.
 //        Assertions.assertTrue(scoreList.size() == 3);
         assertEquals(3, scoreList.size());
+
+        // 나는 리스트의 첫번째 객체의 이름이 뽀로로라고 단언한다.
+        assertEquals("뽀로로", scoreList.get(0).getName());
     }
 }
