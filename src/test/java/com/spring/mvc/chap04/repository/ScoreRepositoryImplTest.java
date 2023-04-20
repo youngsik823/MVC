@@ -35,4 +35,19 @@ class ScoreRepositoryImplTest {
         // 나는 리스트의 첫번째 객체의 이름이 뽀로로라고 단언한다.
         assertEquals("뽀로로", scoreList.get(0).getName());
     }
+
+    @Test
+    @DisplayName("저장소에서 findByStuNum을 호출하여 "+
+            "학번이 2인 학생을 조회하면 " +
+            "그 학생의 국어점수가 33점이고" +
+            "이름이 춘식이어야 한다.")
+    void findOneTest() {
+        // given
+        int stuNum = 2;
+        // when
+        Score score = repository.findByStuNum(stuNum);
+        // then
+        assertEquals(33, score.getKor());
+        assertEquals("춘식이", score.getName());
+    }
 }
