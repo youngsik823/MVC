@@ -21,6 +21,10 @@ public class ScoreRepositoryImpl implements ScoreRepository {
         Score stu1 = new Score("뽀로로", 100, 50, 70, ++sequence, 0, 0, A);
         Score stu2 = new Score("춘식이", 33, 56, 12, ++sequence, 0, 0, A);
         Score stu3 = new Score("대길이", 88, 12, 0, ++sequence, 0, 0, A);
+
+        scoreMap.put(stu1.getStuNum(), stu1);
+        scoreMap.put(stu2.getStuNum(), stu2);
+        scoreMap.put(stu3.getStuNum(), stu3);
     }
     @Override
     public List<Score> findAll() {
