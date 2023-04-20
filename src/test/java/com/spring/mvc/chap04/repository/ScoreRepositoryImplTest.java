@@ -93,6 +93,7 @@ class ScoreRepositoryImplTest {
         score.setKor(100);
         score.setMath(50);
         score.setEng(0);
+
         // when
         boolean flag = repository.save(score);
         List<Score> scoreList = repository.findAll();
@@ -100,6 +101,7 @@ class ScoreRepositoryImplTest {
         // then
         assertEquals(4, scoreList.size());
         assertTrue(flag);
+        assertEquals(4, scoreList.get(scoreList.size() - 1).getStuNum());
     }
 
 }
