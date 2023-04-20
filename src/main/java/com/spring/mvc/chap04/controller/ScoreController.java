@@ -99,4 +99,20 @@ public class ScoreController {
         return "chap04/score-detail";
     }
 
+    @PostMapping("/modify")
+    public String modify(String name, int stuNum, int kor, int eng, int math, Model model) {
+        System.out.println("성공");
+        ScoreRequestDTO dto = new ScoreRequestDTO(name, kor, eng, math);
+        Score score = new Score(dto);
+        System.out.println(score);
+//        score.setStuNum(stnNum);
+//        score.setKor(kor);
+//        score.setEng(eng);
+//        score.setMath(math);
+
+        return "chap04/score-modify";
+    }
+    @GetMapping("/")
+
+
 }

@@ -62,6 +62,7 @@
             <h1>${s.name}님 성적 정보 수정하기~</h1>
             <form action="/score/modify" method="post">
                 <input type="hidden" name="stuNum" value="${s.stuNum}">
+                <input type="hidden" name="name" value="${s.name}">
                 <ul>
                     <li># 국어: <input type="text" name="kor" value="${s.kor}"></li>
                     <li># 영어: <input type="text" name="eng" value="${s.eng}"></li>

@@ -69,6 +69,10 @@
             <div class="btn-group">
                 <a class="list-btn" href="/score/list">목록</a>
             </div>
+            <div class="btn-modify">
+                <a class="list-btn" href="/score/modify">목록</a>
+            </div>
+            
         </section>
 
     </div>
