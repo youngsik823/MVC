@@ -51,7 +51,7 @@ public class ScoreController {
     public String list(Model model) {
         System.out.println("/score/list : GET!");
         List<Score> scoreList = repository.findAll();
-        model.addAttribute(scoreList);
+        model.addAttribute("sList", scoreList);
         return "chap04/score-list";
     }
 
@@ -70,7 +70,17 @@ public class ScoreController {
 
         // save 명령
         repository.save(score);
-        return "";
+        /*
+            등록요청에서 JSP 뷰 포워딩을 하면
+            갱신된 목록을 다시한번 저장소에서 불러와
+            모델에 담는 추가적인 코드가 필요하지만
+
+            리다이렉트를 통해서 위에서 만든 /score/list : GET
+            을 자동으로 다시 보낼 수 있다면 번거러운 코드가
+            줄어들 수 있겠다.
+         */
+        // 리다이렉트로 다시 새로운 요청을 자동으로 들어가게?
+        return "chap04/score-list";
     }
     // 3. 성적정보 삭제 요청
     @PostMapping("/remove")
