@@ -65,4 +65,20 @@ class ScoreRepositoryImplTest {
         assertNull(score);
     }
 
+    @Test
+    @DisplayName("저장소에서 학번이 2인 학생을 삭제한 후에" +
+            "리스트를 전체조회보면 성적의 개수가 2개일 것이고" +
+            "다시 2번학생을 조회했을 때 null이 반환되어야 한다.")
+    void deleteTest() {
+        // given
+        int stuNum = 2;
+        // when
+        repository.deleteByStuNum(stuNum);
+        List<Score> scoreList = repository.findAll();
+        Score score = repository.findByStuNum(stuNum);
+        // then
+        assertEquals(2, scoreList.size());
+        assertNull(score);
+    }
+
 }
