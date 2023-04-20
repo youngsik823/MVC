@@ -6,6 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -80,7 +81,9 @@ class ScoreRepositoryImplTest {
         assertEquals(2, scoreList.size());
         assertNull(score);
 
-        scoreList.forEach(s -> System.out.println(s));
+        for (Score s : scoreList) {
+            System.out.println(s);
+        }
     }
 
     @Test
@@ -103,5 +106,6 @@ class ScoreRepositoryImplTest {
         assertTrue(flag);
         assertEquals(4, scoreList.get(scoreList.size() - 1).getStuNum());
     }
+
 
 }
