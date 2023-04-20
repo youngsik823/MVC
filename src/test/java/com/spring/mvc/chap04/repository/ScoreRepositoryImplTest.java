@@ -29,6 +29,7 @@ class ScoreRepositoryImplTest {
         System.out.println(scoreList.size() == 3);
 
         // 나는 스코어리스트의 사이즈가 3인 것이 참이라고 단언한다.
-        Assertions.assertTrue(scoreList.size() == 3);
+//        Assertions.assertTrue(scoreList.size() == 3);
+        assertEquals(3, scoreList.size());
     }
 }
