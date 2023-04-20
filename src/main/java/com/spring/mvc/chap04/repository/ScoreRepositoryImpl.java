@@ -44,7 +44,10 @@ public class ScoreRepositoryImpl implements ScoreRepository {
 
     @Override
     public boolean deleteByStuNum(int stuNum) {
-        return false;
+        if (!scoreMap.containsKey(stuNum)) {
+            return false;
+        }
+        return true;
     }
 
     @Override
