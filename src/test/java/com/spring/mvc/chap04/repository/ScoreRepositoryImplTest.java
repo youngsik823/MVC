@@ -50,4 +50,17 @@ class ScoreRepositoryImplTest {
         assertEquals(33, score.getKor());
         assertEquals("춘식이", score.getName());
     }
+
+    @Test
+    @DisplayName("저장소에서 findByStuNum을 호출하여 "+
+            "학번이 99인 학생을 조회하면 " +
+            "null이 리턴될 것이다.")
+    void findOneTest2() {
+        // given
+        int stuNum = 99;
+        // when
+        Score score = repository.findByStuNum(stuNum);
+        // then
+        assertNull(score);
+    }
 }
