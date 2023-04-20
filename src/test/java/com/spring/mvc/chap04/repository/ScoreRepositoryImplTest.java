@@ -79,6 +79,27 @@ class ScoreRepositoryImplTest {
         // then
         assertEquals(2, scoreList.size());
         assertNull(score);
+
+        scoreList.forEach(s -> System.out.println(s));
+    }
+
+    @Test
+    @DisplayName("새로운 성적정보를 save를 통해 추가하면" +
+            "목록의 개수가 4개여야 한다.")
+    void saveTest() {
+        // given
+        Score score = new Score();
+        score.setName("언년이");
+        score.setKor(100);
+        score.setMath(50);
+        score.setEng(0);
+        // when
+        boolean flag = repository.save(score);
+        List<Score> scoreList = repository.findAll();
+
+        // then
+        assertEquals(4, scoreList.size());
+        assertTrue(flag);
     }
 
 }
