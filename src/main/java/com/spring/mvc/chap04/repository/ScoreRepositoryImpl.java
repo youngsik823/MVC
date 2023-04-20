@@ -7,6 +7,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import static com.spring.mvc.chap04.entity.Grade.*;
+import static java.util.Comparator.*;
+import static java.util.stream.Collectors.*;
 
 public class ScoreRepositoryImpl implements ScoreRepository {
 
@@ -31,8 +33,9 @@ public class ScoreRepositoryImpl implements ScoreRepository {
     public List<Score> findAll() {
         return new ArrayList<>(scoreMap.values())
                 .stream()
-                .sorted(Comparator.comparing(Score::getStuNum))
-                .collect(Collectors.toList());
+                .sorted(comparing(Score::getStuNum))
+                .collect(toList())
+                ;
     }
 
     @Override
