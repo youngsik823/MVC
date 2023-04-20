@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.spring.mvc.chap04.entity.Grade.A;
+import static com.spring.mvc.chap04.entity.Grade.*;
 
 public class ScoreRepositoryImpl implements ScoreRepository {
 
@@ -28,6 +28,7 @@ public class ScoreRepositoryImpl implements ScoreRepository {
         scoreMap.put(stu2.getStuNum(), stu2);
         scoreMap.put(stu3.getStuNum(), stu3);
     }
+
     @Override
     public List<Score> findAll() {
         return new ArrayList<>(scoreMap.values());
@@ -44,15 +45,13 @@ public class ScoreRepositoryImpl implements ScoreRepository {
 
     @Override
     public boolean deleteByStuNum(int stuNum) {
-        if (!scoreMap.containsKey(stuNum)) {
-            return false;
-        }
+        if (!scoreMap.containsKey(stuNum)) return false;
         scoreMap.remove(stuNum);
         return true;
     }
 
     @Override
     public Score findByStuNum(int stuNum) {
-        return null;
+        return scoreMap.get(stuNum);
     }
 }
