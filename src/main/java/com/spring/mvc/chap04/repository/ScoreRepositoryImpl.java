@@ -47,6 +47,7 @@ public class ScoreRepositoryImpl implements ScoreRepository {
         if (!scoreMap.containsKey(stuNum)) {
             return false;
         }
+        scoreMap.remove(stuNum);
         return true;
     }
 
