@@ -80,7 +80,8 @@ public class ScoreController {
             줄어들 수 있겠다.
          */
         // 리다이렉트로 다시 새로운 요청을 자동으로 들어가게?
-        return "chap04/score-list";
+        return "redirect::/score/list"; // jsp경로가 아니라 요청 URL을 써야한다
+                                        // 그러면 두번째 요청이 자동으로 들어간다.
     }
     // 3. 성적정보 삭제 요청
     @PostMapping("/remove")
