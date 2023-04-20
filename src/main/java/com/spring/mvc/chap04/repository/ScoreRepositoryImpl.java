@@ -10,12 +10,13 @@ import java.util.Map;
 import static com.spring.mvc.chap04.entity.Grade.A;
 
 public class ScoreRepositoryImpl implements ScoreRepository {
-    
+
     // key: 학번, value: 성적정보
-    private static final Map<Integer, Score> scoreMap;   
+    private static final Map<Integer, Score> scoreMap;
+
     // 학번에 사용할 일련번호
     private static int sequence;
-    
+
     static {
         scoreMap = new HashMap<>();
         Score stu1 = new Score("뽀로로", 100, 50, 70, ++sequence, 0, 0, A);
